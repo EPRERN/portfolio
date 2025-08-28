@@ -1,0 +1,10 @@
+<section id="contact" class="py-20 px-6 bg-gray-900 text-center">
+  <h2 class="text-4xl font-bold text-cyan-400 mb-6">Contacto</h2>
+
+  <form #contactForm="ngForm" (ngSubmit)="sendEmail()" class="max-w-xl mx-auto flex flex-col space-y-4">
+    <input type="text" name="nombre" [(ngModel)]="nombre" placeholder="Tu nombre" required class="p-3 rounded-xl bg-gray-800 text-white outline-none">
+    <input type="email" name="email" [(ngModel)]="email" placeholder="Tu email" required class="p-3 rounded-xl bg-gray-800 text-white outline-none">
+    <textarea name="mensaje" [(ngModel)]="mensaje" placeholder="Tu mensaje" rows="5" required class="p-3 rounded-xl bg-gray-800 text-white outline-none"></textarea>
+    <button type="submit" class="bg-cyan-500 text-black font-semibold py-3 rounded-xl hover:bg-cyan-400 transition">Enviar</button>
+  </form>
+</section>

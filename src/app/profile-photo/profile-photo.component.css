@@ -1,0 +1,21 @@
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 6px solid #22d3ee;
+    /* borde cyan elegante */
+    box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(34, 211, 238, 0.5);
+}

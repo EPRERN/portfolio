@@ -1,0 +1,90 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 5rem;
+  background: linear-gradient(to bottom, #0f172a, #111827);
+  color: white;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+/* Animación para el título */
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: fadeInDown 1.8s ease forwards;
+}
+
+.hero-content h1 span {
+  color: #22d3ee;
+}
+
+/* Animación para el párrafo */
+.hero-content p {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #9ca3af;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 3s ease forwards;
+  animation-delay: 2s; /* se retrasa para que aparezca después del h1 */
+}
+
+/* Animación para el botón */
+.hero-content button {
+  margin-top: 1.5rem;
+  margin-left: 300px;
+  padding: 0.75rem 2rem;
+  background: #06b6d4;
+  color: black;
+  font-weight: 600;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s ease forwards;
+  animation-delay: 1.5s; /* aparece último */
+}
+
+.hero-content button:hover {
+  background: #22d3ee;
+  transform: translateY(-2px);
+  box-shadow: 0 35px 100px rgba(34,211,238,0.3);
+}
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 100px; */
+}
+
+/* 🔑 Keyframes */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

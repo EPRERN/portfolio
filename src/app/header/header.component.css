@@ -1,0 +1,31 @@
+header {
+  background: rgba(15, 23, 42, 0.8); /* gray-950 con transparencia */
+  backdrop-filter: blur(10px); /* efecto glass */
+  color: white;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  z-index: 50;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #22d3ee;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #22d3ee;
+}
