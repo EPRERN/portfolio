@@ -2,18 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 5rem;
   background: linear-gradient(to bottom, #0f172a, #111827);
   color: white;
   overflow: hidden;
 }
 
+/* Contenedor de contenido */
 .hero-content {
   max-width: 900px;
+  flex: 1;
 }
 
-/* Animación para el título */
+/* Animación título */
 .hero-content h1 {
   font-size: 4rem;
   font-weight: 700;
@@ -26,7 +28,7 @@
   color: #22d3ee;
 }
 
-/* Animación para el párrafo */
+/* Animación párrafo */
 .hero-content p {
   margin-top: 1rem;
   font-size: 1.25rem;
@@ -34,13 +36,12 @@
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 3s ease forwards;
-  animation-delay: 2s; /* se retrasa para que aparezca después del h1 */
+  animation-delay: 2s;
 }
 
-/* Animación para el botón */
+/* Animación botón */
 .hero-content button {
-  margin-top: 1.5rem;
-  margin-left: 300px;
+  margin-top: 2rem;
   padding: 0.75rem 2rem;
   background: #06b6d4;
   color: black;
@@ -50,7 +51,8 @@
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 2s ease forwards;
-  animation-delay: 1.5s; /* aparece último */
+  animation-delay: 1.5s;
+  cursor: pointer;
 }
 
 .hero-content button:hover {
@@ -59,14 +61,134 @@
   box-shadow: 0 35px 100px rgba(34,211,238,0.3);
 }
 
+/* Hero photo */
 .hero-photo {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-right: 100px; */
+  flex: 1;
 }
 
-/* 🔑 Keyframes */
+/* Foto de perfil */
+.profile-photo img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 6px solid #22d3ee;
+  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(34, 211, 238, 0.5);
+}
+
+/* 🔹 RESPONSIVE */
+
+/* Tablets grandes */
+@media (max-width: 1200px) {
+  .hero {
+    padding: 5rem 3rem 2rem; /* 🔹 más espacio arriba */
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .profile-photo img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Tablets medianas / laptops */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    justify-content: flex-start; /* 🔹 empieza desde arriba */
+    text-align: center;
+    padding: 8rem 2rem 2rem; /* 🔹 más espacio arriba */
+    min-height: 100vh;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.15rem;
+  }
+
+  .hero-content button {
+    margin-top: 1.5rem;
+    width: auto;
+  }
+
+  .hero-photo {
+    margin-top: 3rem; /* 🔹 separa foto del texto */
+  }
+
+  .profile-photo img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+
+  .hero-content button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    width: 80%;
+  }
+
+  .hero-photo img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .hero-content button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .profile-photo img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero {
+    padding: 10rem 1rem 2rem; /* 🔹 baja contenido hacia el medio */
+  }
+}
+
+/* 🔑 Animaciones */
 @keyframes fadeInDown {
   from {
     opacity: 0;

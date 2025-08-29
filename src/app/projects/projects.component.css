@@ -40,11 +40,15 @@ h2 {
   transform: scale(1.05);
   box-shadow: 0 12px 30px rgba(34,211,238,0.3);
 }
+br{
+    margin-top: 340px;
+}
 
 h3 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
+  color: aliceblue;
 }
 
 p {
