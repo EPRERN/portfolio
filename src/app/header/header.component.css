@@ -34,4 +34,5 @@ nav a {
 
 nav a:hover {
   color: #22d3ee;
+  box-shadow: 1px 18px 20px rgba(34,211,238,0.4);
 }
