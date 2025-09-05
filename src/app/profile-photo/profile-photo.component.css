@@ -19,3 +19,47 @@
     transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(34, 211, 238, 0.5);
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Texto oculto por defecto */
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  max-width: 200px;
+  background-color: #0e7490; /* cyan-700 */
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 10;
+  bottom: 110%; /* lo pone arriba de la foto */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.7); /* efecto glow neon */
+}
+
+/* Flechita */
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* debajo del tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #0e7490 transparent transparent transparent;
+}
+
+/* Al hacer hover aparece */
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

@@ -40,7 +40,7 @@
 }
 
 /* Animación botón */
-.hero-content button {
+/* .hero-content button {
   margin-top: 2rem;
   padding: 0.75rem 2rem;
   background: #06b6d4;
@@ -59,7 +59,7 @@
   background: #22d3ee;
   transform: translateY(-2px);
   box-shadow: 0 35px 100px rgba(34,211,238,0.3);
-}
+} */
 
 /* Hero photo */
 .hero-photo {
@@ -105,6 +105,22 @@
     width: 250px;
     height: 250px;
   }
+
+   .tooltip .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 10px; /* separa texto de la foto */
+    display: block;
+  }
+
+  /* Ocultar flechita en móviles */
+  .tooltip .tooltip-text::after {
+    display: none;
+  }
 }
 
 /* Tablets medianas / laptops */
@@ -125,7 +141,7 @@
     font-size: 1.15rem;
   }
 
-  .hero-content button {
+  button {
     margin-top: 1.5rem;
     width: auto;
   }
@@ -137,6 +153,20 @@
   .profile-photo img {
     width: 220px;
     height: 220px;
+  }
+
+    .tooltip .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  .tooltip .tooltip-text::after {
+    display: none;
   }
 }
 
@@ -160,6 +190,20 @@
     width: 200px;
     height: 200px;
   }
+
+    .tooltip .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  .tooltip .tooltip-text::after {
+    display: none;
+  }
 }
 
 /* Celulares pequeños */
@@ -172,8 +216,8 @@
     font-size: 0.95rem;
   }
 
-  .hero-content button {
-    width: 100%;
+   button {
+    width: 10%;
     padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
   }
@@ -186,6 +230,7 @@
   .hero {
     padding: 10rem 1rem 2rem; /* 🔹 baja contenido hacia el medio */
   }
+  
 }
 
 /* 🔑 Animaciones */
@@ -209,4 +254,101 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+/* From Uiverse.io by cssbuttons-io */ 
+button {
+ --glow-color: rgb(67, 184, 197);
+ --glow-spread-color: rgba(123, 182, 255, 0.781);
+ --enhanced-glow-color: rgb(146, 247, 252);
+ --btn-color: rgb(26, 67, 92);
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
+}
+
+button::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+button:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+button:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Texto oculto por defecto */
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  max-width: 200px;
+  background-color: #0e7490; /* cyan-700 */
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 10;
+  bottom: 110%; /* lo pone arriba de la foto */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+  border-color: 0 0 15px rgba(34, 211, 238, 0.7); /* efecto glow neon */
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.7); /* efecto glow neon */
+}
+
+/* Flechita */
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* debajo del tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #0e7490 transparent transparent transparent;
+  
+}
+
+/* Al hacer hover aparece */
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.7); /* efecto glow neon */
 }

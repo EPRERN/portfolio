@@ -1,55 +1,95 @@
 section {
-  background: #111827; /* gray-900 */
-  padding: 5rem 1.5rem;
-  text-align: center;
-  height: 100%;
+    background: #111827; /* gray-900 */
+    padding: 5rem 1.5rem;
+    text-align: center;
+    height: 100%;
 }
 
 h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #22d3ee;
-  margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #22d3ee;
+    margin-bottom: 1.5rem;
 }
 
 p {
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
-  font-size: 1.125rem;
-  color: #d1d5db; /* gray-300 */
-  line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.125rem;
+    color: #d1d5db; /* gray-300 */
+    line-height: 1.8;
 }
+
+.skills{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.2rem;
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    margin: auto;
+}
+.skills li {
+    background: #1f2937; /* gray-800 */
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d1d5db;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skills li:hover {
+    background: #0e7490; /* cyan-700 */
+    color: #22d3ee; /* cyan-400 */
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(34,211,238,0.4);
+}
+
 
 /* GRID de habilidades */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.2rem;
-  list-style: none;
-  padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.2rem;
+    list-style: none;
+    padding: 0;
 }
+
 
 br{
     margin-top: 100px;
 }
 
 .skills-grid li {
-  background: #1f2937; /* gray-800 */
-  padding: 1rem 1.5rem;
-  border-radius: 0.75rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #d1d5db;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  cursor: pointer;
+    background: #1f2937; /* gray-800 */
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d1d5db;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 /* Hover con animación y color */
 .skills-grid li:hover {
-  background: #0e7490; /* cyan-700 */
-  color: #22d3ee; /* cyan-400 */
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(34,211,238,0.4);
+    background: #0e7490; /* cyan-700 */
+    color: #22d3ee; /* cyan-400 */
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(34,211,238,0.4);
+}
+
+.cormorant {
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: lighter;
+    font-size: 50px;
+    color: aliceblue;
+    font-style: normal;
 }
